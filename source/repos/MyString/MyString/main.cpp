@@ -22,6 +22,7 @@ int main() {
 
     MyString::GetCountLiveObj();
     MyString::GetCountCreatedObj();
-
+    MyString strData{ 'H', 'e', 'l', 'l', 'o',' ', 'f', 'o','r', ' ', 'A', 'l', 'l'};
+    strData.Print();
     return 0;
 }

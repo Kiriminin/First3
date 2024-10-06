@@ -80,10 +80,23 @@ MyString& MyString::operator=(MyString&& obj) {
     return *this;
 }
 
+MyString::MyString(initializer_list<char> a) {
+    strLength = a.size();
+    strData = new char[strLength + 1];
+
+    for (auto x = a.begin(); x != a.end(); ++x) {
+        *strData = *x;
+        strData++;
+    }
+    *strData = '\0';
+    strData -= strLength;
+}
+
 MyString::~MyString() {
     delete[] strData;
     countLiveObj--;
 }
+
 void MyString::MyStrcpy(MyString& obj) {
     if (strData == nullptr) return;
     delete[] obj.strData;
@@ -259,5 +272,4 @@ ostream& operator<<(ostream& os, MyString obj) {
 istream& operator>>(istream& is, MyString& obj) {
     obj.Input();
     return is;
-
 }

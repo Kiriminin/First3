@@ -13,6 +13,7 @@ public:
 	MyString(const MyString& other);
 	MyString(MyString&& obj);
 	MyString& operator=(MyString&& obj);
+	MyString(initializer_list<char> a);
 	~MyString();  // Деструктор
 
 	void MyStrcpy(MyString& obj); // Метод для копирования содержимого строки в другой объект
@@ -34,9 +35,14 @@ public:
 	MyString operator=(const MyString& obj);
 	MyString operator[](int index);
 	void operator()();
-};
+	
+	friend ostream& operator<<(ostream& os, MyString obj);
+	friend istream& operator>>(istream& is, MyString& obj);
+}; 
+
 // Перегруженный оператор вывода
 ostream& operator<<(ostream& os, MyString obj);
+
 // Перегруженный оператор ввода
 istream& operator>>(istream& is, MyString& obj);
 // Перегруженный оператор сложения строки и объекта MyString
