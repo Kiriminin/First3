@@ -1,5 +1,5 @@
 #pragma once
-class Human  // base class
+class Human  // Base_class
 {
 protected:
     char* name;
@@ -14,4 +14,4 @@ public:
     void Input();
 
     virtual ~Human() = 0;
-};
+}; 

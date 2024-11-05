@@ -17,4 +17,4 @@ public:
     void Salary();
 
     void Input(const char* n, int a, double sal, const char* companyN, const char* prog, const char* skillset);
-}; 
+};

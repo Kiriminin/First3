@@ -16,4 +16,4 @@ public:
     void Salary();
 
     void Input(const char* n, int a, double sal, const char* comp, bool finish);
-};
+}; 
